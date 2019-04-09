@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Blue Chip</title>
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{% static 'css/base.css' %}">
+
+
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse navbar-static-top">
+      <div class="container">
+        <ul class="nav navbar-nav">
+          <li class="navbar-brand"><a href="{% url 'index1' %}">BLUE CHIP</a></li>
+          <li class="navbar-link"><a href="{% url 'admin:index'%}">Admin</a></li>
+
+
+          {% if request.user.is_authenticated %}
+             <li><a class="navbar-link" href="{% url 'logout' %}">Logout</a></li>
+          {% else %}
+             <li><a class="navbar-link" href="{% url 'basic_app:user_login' %}">Login</a></li>
+           {% endif %}
+        </ul>
+      </div>
+    </nav>
+
+
+    <div class="container">
+      {% block body-block %}
+      {% endblock %}
+    </div>
+    <footer>
+            <div class="container">
+                <p>Copyright © Aditya Prakash. All Rights Reserved | Contact: 7979990752</p>
+            </div>
+        </footer>
+  </body>
+</html>

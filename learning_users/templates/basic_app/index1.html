@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+{% extends "basic_app/base.html" %}
+{% block body-block %}
+{% load static %}
+<div class="jumbotron">
+
+  {% if request.user.is_authenticated %}
+  <h1>Hello, {{ request.user.username }}! Welcome to Blue Chip Game !</h1>
+  <a href="{% url 'basic_app:bluechip' %}" class="btn btn-primary btn-lg"> Play game</a>
+{% else %}
+<h1>Welcome Guest!</h1>
+<h2> Please sign in to play Blue chip game.</h2>
+<a href="{% url 'basic_app:register' %}" class="btn btn-primary btn-lg"> Create an account</a>
+<a href="{% url 'basic_app:user_login' %}" class="btn btn-primary btn-lg"> Sign In</a>
+ {% endif %}
+</div>
+
+{% endblock %}

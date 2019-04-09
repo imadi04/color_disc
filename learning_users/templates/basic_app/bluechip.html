@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Blue Chip Game</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="{% static 'css/bluechip.css' %}">
+
+
+    </script>
+
+    </script>
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse navbar-static-top">
+      <div class="container">
+        <ul class="nav navbar-nav">
+          <li class="navbar-brand"><a href="{% url 'index1' %}">BLUE CHIP</a></li>
+          {% if request.user.is_authenticated %}
+             <li><a class="navbar-link" href="{% url 'logout' %}">Logout</a></li>
+          {% else %}
+             <li><a class="navbar-link" href="{% url 'basic_app:user_login' %}">Login</a></li>
+           {% endif %}
+
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container" align='center'>
+      <h1>Welcome to Blue Chip Game !</h1>
+      <h2>Connect four discs of same color to win.</h2>
+      <table class="board">
+        <tr>
+          <td><button type="button" name="button"></button></td>
+          <td><button type="button" name="button"></button></td>
+          <td><button type="button" name="button"></button></td>
+          <td><button type="button" name="button"></button></td>
+          <td><button type="button" name="button"></button></td>
+          <td><button type="button" name="button"></button></td>
+          <td><button type="button" name="button"></button></td>
+        </tr>
+        <tr>
+          <td><button type="button" name="button"></button></td>
+          <td><button type="button" name="button"></button></td>
+          <td><button type="button" name="button"></button></td>
+          <td><button type="button" name="button"></button></td>
+          <td><button type="button" name="button"></button></td>
+          <td><button type="button" name="button"></button></td>
+          <td><button type="button" name="button"></button></td>
+        </tr>
+        <tr>
+          <td><button type="button" name="button"></button></td>
+          <td><button type="button" name="button"></button></td>
+          <td><button type="button" name="button"></button></td>
+          <td><button type="button" name="button"></button></td>
+          <td><button type="button" name="button"></button></td>
+          <td><button type="button" name="button"></button></td>
+          <td><button type="button" name="button"></button></td>
+        </tr>
+        <tr>
+          <td><button type="button" name="button"></button></td>
+          <td><button type="button" name="button"></button></td>
+          <td><button type="button" name="button"></button></td>
+          <td><button type="button" name="button"></button></td>
+          <td><button type="button" name="button"></button></td>
+          <td><button type="button" name="button"></button></td>
+          <td><button type="button" name="button"></button></td>
+        </tr>
+        <tr>
+          <td><button type="button" name="button"></button></td>
+          <td><button type="button" name="button"></button></td>
+          <td><button type="button" name="button"></button></td>
+          <td><button type="button" name="button"></button></td>
+          <td><button type="button" name="button"></button></td>
+          <td><button type="button" name="button"></button></td>
+          <td><button type="button" name="button"></button></td>
+        </tr>
+        <tr>
+          <td><button type="button" name="button"></button></td>
+          <td><button type="button" name="button"></button></td>
+          <td><button type="button" name="button"></button></td>
+          <td><button type="button" name="button"></button></td>
+          <td><button type="button" name="button"></button></td>
+          <td><button type="button" name="button"></button></td>
+          <td><button type="button" name="button"></button></td>
+        </tr>
+      </table>
+      <br>
+      <br>
+
+        <a href="{% url 'basic_app:bluechip' %}" class="btn btn-primary btn-lg"> Replay</a>
+        <br>
+        <br>
+    </div>
+
+
+    <footer>
+            <div class="container">
+                <p>Copyright © Aditya Prakash. All Rights Reserved | Contact: +91 79799 90752</p>
+            </div>
+        </footer>
+        <script src="{% static "js/bluechip.js" %}">
+        </script>
+  </body>
+</html>
